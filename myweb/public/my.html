@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="./jquery-ui.min.css">
+    <link rel="stylesheet" href="./css/my.css">
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./bootstrap.min.js"></script>
+    <script src="./jquery-ui.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="navbar navbar-default">
+                    <div class="navbar-header">
+                        <a href="#" class="navbar-brand">生命游戏</a>
+                        <a id="user-login" href="#" class="navbar-brand">登录</a>
+                        <div id="dialog-login" title="用户登录">
+                            <form action="" class="dl-form"> 
+                                用户名：<span class="warning-name">用户名不存在</span><input type="text" class="zc-input " placeholder="请输入用户名"><br>
+                                密  码：<input type="password" class="zc-input" placeholder="请输入密码"><br>
+                                <input type="submit" value="登录" class="zc-input">
+                            </form>
+                        </div>
+                        <a id="user-zc" href="#" class="navbar-brand">注册</a>
+                        <div id="dialog-zc" title="用户注册">
+                            <form action="" class="zc-form">
+                                用户名：<span class="warning-name">用户名已存在</span><br><input type="text" class="zc-input" placeholder="请输入1到8位任意字符的用户名"><br>
+                                密  码：<br><input type="password" class="zc-input" placeholder="请输入不少于6位数字或字母的密码"><br>
+                                再次输入密码：<br><input type="password" class="zc-input" placeholder="请再次输入密码"><br>
+                                <input type="checkbox">我同意本站的使用条款<br>
+                                <input type="submit" value="注册" class="zc-input">
+                            </form>
+                        </div>
+                        <a href="#my-menu" class="navbar-toggle" data-toggle="collapse">
+                            更多
+                        </a>
+                    </div>
+                        
+                    <div id="my-menu" class="collapse navbar-collapse accordion">
+                        <ul class="nav navbar-nav head-menu">
+                            <li><a href="#" class="navbar-brand">游戏规则
+                                <div class="game-tip game-tip1">
+                                        <p>细胞自动机（又称元胞自动机），名字虽然很深奥，但是它的行为却是非常美妙的。所有这些怎样实现的呢？我们可以把计算机中的宇宙想象成是一堆方格子构成的封闭空间，尺寸为N的空间就有N*N个格子。而每一个格子都可以看成是一个生命体，每个生命都有生和死两种状态，如果该格子生就显示绿色，死则显示黑色。每一个格子旁边都有邻居格子存在，如果我们把3*3的9个格子构成的正方形看成一个基本单位的话，那么这个正方形中心的格子的邻居就是它旁边的8个格子。
+                                        每个格子的生死遵循下面的原则：</p>
+                                        <p> 1． 如果一个细胞周围有3个细胞为生（一个细胞周围共有8个细胞），则该细胞为生（即该细胞若原先为死，则转为生，若原先为生，则保持不变） 。</p>
+                                        <p> 2． 如果一个细胞周围有2个细胞为生，则该细胞的生死状态保持不变；</p>
+                                        <p> 3． 在其它情况下，该细胞为死（即该细胞若原先为生，则转为死，若原先为死，则保持不变）</p>
+                                        <p>事实上，这只是其中一种规则，但非常经典</p>
+                                </div>
+                            </a></li>
+                            <li><a href="#" class="navbar-brand">基本介绍
+                                <div class="game-tip game-tip2">
+                                    生命游戏其实是一个零玩家游戏，它包括一个二维矩形世界，这个世界中的每个方格居住着一个活着的或死了的细胞。一个细胞在下一个时刻生死取决于相邻八个方格中活着的或死了的细胞的数量。如果相邻方格活着的细胞数量过多，这个细胞会因为资源匮乏而在下一个时刻死去；相反，如果周围活细胞过少，这个细胞会因太孤单而死去。实际中，你可以设定周围活细胞的数目怎样时才适宜该细胞的生存。如果这个数目设定过低，世界中的大部分细胞会因为找不到太多的活的邻居而死去，直到整个世界都没有生命；如果这个数目设定过高，世界中又会被生命充满而没有什么变化。实际中，这个数目一般选取2或者3；这样整个生命世界才不至于太过荒凉或拥挤，而是一种动态的平衡。这样的话，游戏的规则就是：当一个方格周围有2或3个活细胞时，方格中的活细胞在下一个时刻继续存活；即使这个时刻方格中没有活细胞，在下一个时刻也会“诞生”活细胞。在这个游戏中，还可以设定一些更加复杂的规则，例如当前方格的状况不仅由父一代决定，而且还考虑祖父一代的情况。你还可以作为这个世界的上帝，随意设定某个方格细胞的死活，以观察对世界的影响。
+                                </div>
+                            </a></li>
+                            <li><a href="#" class="navbar-brand">发展历史
+                                <div class="game-tip game-tip3">
+                                        生命游戏是英国数学家约翰·何顿·康威在1970年发明的细胞自动机。它最初于1970年10月在《科学美国人》杂志中马丁·葛登能（Martin Gardner，1914年11月21日－2010年5月22日。又译：马丁·加德纳）的“数学游戏”专栏出现。一时吸引了各行各业一大批人的兴趣，这时细胞自动机课题才吸引了科学家的注意。
+                                        <p>早在1950年，计算机之父冯·诺伊曼写了一段程序用来模拟细胞复制过程，这就是最早的细胞自动机，只不过连冯诺伊曼本人也没太重视，所以这项研究很快就沉了。。。直到20年后的1970年，剑桥大学的约翰·何顿·康威设计了一个名为生命游戏（Life）的电脑游戏，细胞自动机才进入了科学家们的视野。后来，又有了模拟蚂蚁行为的兰顿蚂蚁（Langton ant）、模拟二极管电子逻辑的线世界（Wire world），再有史蒂芬·沃尔夫勒姆对初等细胞机256种规则所产生的模型进行了深入研究，并用熵来描述其演化行为，将细胞自动机分为平稳型、周期型、混沌型和复杂型，以至于今天应用到各个领域问题的研究……当然这是后话了，今天我们就以《生命游戏》为起点，揭开细胞自动机的神秘面纱。</p>
+                                </div>
+                            </a></li>
+                            <li><a href="#" class="navbar-brand">相关轶事
+                                <div class="game-tip game-tip4">
+                                </div>
+                            </a></li>
+                            <li id="user-sdl" class="navbar-brand"></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="main" style="overflow:scroll">
+                    <canvas id="canvas"></canvas>
+                </div>
+            </div>
+            <div class="col-sm-2">
+                <ul id="user-control">
+                    <!-- <li>速度:<input type="text" id="u-speed"></li> -->
+                    <li id="u-speed">进化速度: <input type="button" id="u-slower" value="-"><span>1次/秒</span><input type="button" id="u-faster" value="+"></li>
+                    <li>世界长度:<input type="text" class="u-size" placeholder="1500"></li>
+                    <li>世界高度:<input type="text" class="u-size" placeholder="900"></li>
+                    <li>生命大小:<input type="text" class="u-size" placeholder="30"></li>
+                    <li>视野倍数:<input type="text" class="u-size" placeholder="1"></li>
+                    <li><button class="u-size">散播生命</button></li>
+                    <li><button id="clear-cell" class="u-size">消灭所有</button></li>
+                    <li><button id="start-stop" class="u-size">自动进化</button></li>
+                    <li><button id="next-cell" class="u-size">进化一步</button></li>
+                    <!-- <li><button id="save-obj" class="u-size">保存测试</button></li> -->
+                    <li>经典示例:
+                        <select id="jd" class="u-size">
+                            <option value ="sgd">闪光灯</option>
+                            <option value ="hxj">滑翔机</option>
+                            <option value ="flower">烟花</option>
+                            <option value ="ten">十连</option>
+                            <option value="fly">飞船</option>
+                            <option value="gun">滑翔机枪</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                更多
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/user.js"></script>
+<script src="./js/my.js"></script>
+<script>
+</script>
+</html>

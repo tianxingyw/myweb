@@ -1,0 +1,70 @@
+div{
+    border: 1px solid #000;
+}
+.main{
+    background-color: #000;
+    height:618px;
+}
+input{
+    border-radius:3px;
+}
+button{
+    border-radius:3px;
+    background-color: rgb(231, 234, 238);
+}
+#user-control{
+    padding: 0%;
+}
+#user-control>li{
+    width:100%;
+    margin-top: 1%;
+    display:flex;
+}
+#user-control>li>.u-size{
+    width:60%;
+    margin: auto;
+}
+.zc-input{
+    width:100%;
+    margin: 5px;
+    border-radius:3px;
+}
+.login-zc{
+    background-color: rgba(60, 156, 73, 0.849)
+}
+.warning-name{
+    color: red;
+    display:none;
+}
+#user-sdl{
+    color: blue
+}
+.game-tip{    
+    width: 700%;
+    position: absolute;
+    top: 101%;
+    z-index: 99;
+    display:none;
+    background-color: white;
+    text-indent: 2em;
+    border: 0px solid #000;
+    box-shadow: 4px 4px 5px;
+}
+.head-menu>li>a:hover>.game-tip {
+    display:block;
+}
+.head-menu>li:hover{
+    background-color: white;
+}
+.game-tip1{
+    left:-230%;
+}
+.game-tip2{
+    left:-327%;
+}
+.game-tip3{
+    left:-425%;
+}
+.game-tip4{
+    left:-530%;
+}
